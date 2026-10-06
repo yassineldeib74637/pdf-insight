@@ -7,7 +7,7 @@ Zapis tego, jak AI było użyte przy budowie PDF Insight.
 - **Claude (Sonnet 5.5)** w czatu Claude: generowanie kodu, testów, README, konfiguracji CI oraz wdrożenie funkcji przez konektor Supabase.
 - **Środowisko z powłoką** (Node 22, npm, git): uruchamianie `tsc`, ESLint, Vitest i buildu Vite przed każdym commitem.
 - **Przeglądarka sterowana przez Claude**: założenie repozytorium, wgranie plików przez interfejs GitHub, włączenie GitHub Pages i test działającego demo.
-- **Gemini API** (model `gemini-2.5-flash`, konfigurowalny): to jest model, który robi analizę w samej aplikacji.
+- **Gemini API** (model ustawiany sekretem `GEMINI_MODEL`, w demo `gemini-flash-lite-latest`): to jest model, który robi analizę w samej aplikacji.
 
 ## Kluczowe prompty
 

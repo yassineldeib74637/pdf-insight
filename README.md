@@ -86,7 +86,7 @@ Skrypty: `npm run lint`, `npm test`, `npm run build`.
 | `VITE_API_URL`           | frontend (build)     | adres funkcji `https://<ref>.supabase.co/functions/v1/analyze` |
 | `VITE_SUPABASE_ANON_KEY` | frontend (build)     | publiczny klucz `anon` projektu Supabase                       |
 | `GEMINI_API_KEY`         | sekret Supabase      | klucz do Gemini API (nigdy w repozytorium)                     |
-| `GEMINI_MODEL`           | sekret (opcjonalnie) | nazwa modelu, domyślnie `gemini-2.5-flash`                     |
+| `GEMINI_MODEL`           | sekret (zalecany)    | nazwa modelu; demo używa `gemini-flash-lite-latest`            |
 | `ALLOWED_ORIGIN`         | sekret (opcjonalnie) | dodatkowe dozwolone originy, rozdzielone przecinkami           |
 
 ### Własny backend
@@ -105,6 +105,6 @@ Skrypty: `npm run lint`, `npm test`, `npm run build`.
 - Brak OCR: skany bez warstwy tekstowej są odrzucane z komunikatem.
 - Limit żądań działa w pamięci instancji funkcji, więc jest przybliżony (nie zastępuje limitów po stronie dostawcy).
 - Heurystyka wykrywania prompt injection łapie tylko znane formuły; główną obroną jest prompt i walidacja schematu.
-- Darmowe limity Gemini mogą powodować komunikat o przeciążeniu usługi.
+- Darmowe limity Gemini mogą powodować komunikat o przeciążeniu usługi. Modele Google są wycofywane i bywają przeciążone, dlatego nazwa modelu jest sekretem `GEMINI_MODEL`, a nie stałą w kodzie (domyślna wartość w kodzie, `gemini-2.5-flash`, jest już niedostępna dla nowych kluczy).
 - Plik `package-lock.json` nie jest w repozytorium; wersje zależności są przypięte na stałe w `package.json`.
 - Podsumowanie „3–5 zdań” jest wymuszane promptem, a nie twardą walidacją (liczenie zdań w polskich skrótach, np. „sp. z o.o.”, jest zawodne).
